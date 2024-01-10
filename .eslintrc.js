@@ -1,20 +1,30 @@
-export default {
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/essential"
+    "extends": "plugin:vue/vue3-essential",
+    "overrides": [
+        {
+            "env": {
+                "node": true
+            },
+            "files": [
+                ".eslintrc.{js,cjs}"
+            ],
+            "parserOptions": {
+                "sourceType": "script"
+            }
+        }
     ],
     "parserOptions": {
-        "ecmaVersion": 12,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
         "vue"
     ],
     "rules": {
-        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        'vue/multi-word-component-names': 0
     }
-};
+}
