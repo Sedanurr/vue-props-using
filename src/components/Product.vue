@@ -1,8 +1,8 @@
 <template>
-  <div style="display: flex;justify-content:center">
+  <div class="products-container">
     <ul>
       <li v-for="(product, index) in products" :key="index">
-        <div style="display:flex ;justify-content:space-around">
+        <div class="product">
           <p>Product Name: {{ product.name }}</p>
           <p>Product Stock: {{ product.stock }}</p>
           <p>Product Price: {{ product.price }}</p>
@@ -20,3 +20,13 @@ export default {
   },
 };
 </script>
+<style>
+.products-container {
+  display: flex;
+  justify-content: center;
+}
+.product {
+  display: flex;
+  justify-content: space-around;
+}
+</style>
