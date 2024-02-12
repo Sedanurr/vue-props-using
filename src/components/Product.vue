@@ -1,11 +1,11 @@
 <template>
   <div class="products-container">
     <ul>
-      <li v-for="(product, index) in products" :key="index">
+      <li v-for="(productItem, index) in product" :key="index">
         <div class="product">
-          <p>Product Name: {{ product.name }}</p>
-          <p>Product Stock: {{ product.stock }}</p>
-          <p>Product Price: {{ product.price }}</p>
+          <p>Product Name: {{productItem.name}}</p>
+          <p>Product Stock: {{ productItem.stock }}</p>
+          <p>Product Price: {{ productItem.price }}</p>
         </div>
       </li>
     </ul>
@@ -13,11 +13,7 @@
 </template>
 <script>
 export default {
-  props: ["product"],
-  data() {
-    const products = this.$props.product;
-    return { products };
-  },
+  props: ["product"]
 };
 </script>
 <style>
